@@ -1,0 +1,6 @@
+DROP TABLE report_summary;
+CREATE TABLE report_summary (
+customer_district character varying(20) NOT NULL,
+amount numeric(5,2) NOT NULL,
+rental_id integer NOT NULL
+);

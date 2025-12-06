@@ -1,0 +1,11 @@
+CREATE FUNCTION customer_loyalty()
+RETURNS TRIGGER AS $$
+BEGIN
+DELETE FROM report_summary;
+INSERT INTO report_summary (
+SELECT last_name, district, sum(amount), count(rental_id)
+FROM report_detailed
+GROUP BY last_name, district);
+RETURN NEW;
+END;
+$$ LANGUAGE PLPGSQL;

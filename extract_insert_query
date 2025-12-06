@@ -1,0 +1,21 @@
+INSERT INTO report_detailed(
+last_name,
+first_name,
+district,
+amount,
+payment_date,
+rental_id,
+rental_date)
+
+SELECT cust.last_name,
+cust.first_name,
+addy.district,
+pay.amount,
+pay.payment_date,
+rent.rental_id,
+rent.rental_date
+FROM payment AS pay
+INNER JOIN customer AS cust ON cust.customer_id = pay.customer_id
+INNER JOIN rental AS rent ON rent.rental_id = pay.rental_id
+INNER JOIN address AS addy on addy.address_id = cust.address_id
+ORDER BY pay.payment_date DESC;

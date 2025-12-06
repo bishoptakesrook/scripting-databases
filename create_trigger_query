@@ -1,0 +1,4 @@
+CREATE TRIGGER update_summary
+AFTER INSERT on report_detailed
+FOR EACH STATEMENT
+EXECUTE PROCEDURE customer_loyalty();
