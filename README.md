@@ -1,38 +1,70 @@
-# Project Overview
+# Scripting Databases — PostgreSQL ETL Reporting Pipeline
 
-This academic project required designing and implementing a simplified end‑to‑end data‑mining and ETL workflow within a single PostgreSQL environment. Although all work is performed inside one database for instructional purposes, the structure mirrors real‑world analytics tasks where data must be extracted, transformed, and loaded to support reporting and decision‑making.
-
-The goal of the project is to create a repeatable reporting pipeline driven by a clearly defined business question that depends on aggregated data. The resulting report is composed of two sections:
-
-- **Detailed Section** – Contains the raw, granular records that inform the analysis.  
-- **Summary Section** – Contains aggregated metrics automatically generated from the detailed data through ETL logic.
+Academic project (WGU) demonstrating a full ETL workflow built against the 
+PostgreSQL DVD Rental database. The pipeline extracts customer payment and 
+rental data, applies a custom transformation, and auto-populates a summary 
+report via trigger — all refreshable through a stored procedure.
 
 ---
 
-## Skills Demonstrated
-
-### Business & Analytical Skills
-- **Summarizing a real‑world business report** using the provided datasets and data dictionaries, including defining the analytical question and identifying stakeholders.
-- **Describing the underlying data sources**, including relevant tables, relationships, and fields required for both the detailed and summary sections.
-- **Selecting and justifying fields** included in each section based on their relevance to the business question and their role in aggregation.
-- **Identifying and implementing a custom data transformation**, such as converting coded values into human‑readable labels to improve clarity and usability.
-- **Explaining the distinct business purposes** of detailed versus summary data and how each supports different levels of decision‑making.
-- **Determining an appropriate refresh cadence** to ensure the report remains accurate and relevant for stakeholders.
+## Business Question
+**Which customers generate the most rental revenue, and how does that 
+vary by district?**
 
 ---
 
-## Technical Competencies
+## How It Works
 
-- **Creating database structures** (tables) to store both detailed and summary report sections.
-- **Writing SQL queries** to extract and validate raw data for the Detailed section.
-- **Developing SQL functions** to perform required data transformations.
-- **Implementing a trigger** that automatically updates the Summary table whenever new records are added to the Detailed table.
-- **Building a stored procedure** that refreshes both tables by clearing existing data and re‑running the ETL pipeline, including documentation on recommended execution frequency.
-- **Explaining how to schedule the stored procedure** to maintain ongoing data freshness.
-- **Demonstrating the full workflow** through a recorded walkthrough of the SQL code, environment, and ETL logic.
-- **Documenting sources and maintaining academic integrity**, including citations, references, and professional communication throughout the submission.
+**1. Extract & Load**  
+Raw data is pulled from four source tables — `payment`, `customer`, 
+`rental`, and `address` — joined and inserted into `report_detailed`, 
+ordered by payment date descending.
+
+**2. Transform**  
+A custom PL/pgSQL function (`customer_loyalty()`) categorizes customers 
+based on payment behavior (e.g., total spend thresholds → loyalty tier label).
+
+**3. Summarize via Trigger**  
+`update_summary` fires `AFTER INSERT` on `report_detailed` and automatically 
+populates `report_summary` with aggregated results — no manual step required.
+
+**4. Stored Procedure Refresh**  
+A stored procedure truncates both report tables and reruns the full ETL load, 
+designed to be scheduled (e.g., monthly) to keep data current.
 
 ---
+
+## Key SQL Concepts Demonstrated
+- `CREATE TABLE` with primary keys and foreign key constraints
+- Multi-table `INNER JOIN` extraction queries
+- PL/pgSQL custom functions and transformations
+- `AFTER INSERT` trigger automating summary population
+- Stored procedure with truncate + reload pattern
+- `SELECT DISTINCT`, `ALTER TABLE`, `TRUNCATE`, `DROP`
+
+---
+
+## File Reference
+
+| File | Purpose |
+|---|---|
+| `SQLIntro.sql` | Foundational SQL — DDL, DML, joins, functions, triggers |
+| `SectionB.sql` | Section B task queries |
+| `extract_insert_query` | ETL extraction: joins payment, customer, rental, address |
+| `function_transform_query` | Custom transformation function (loyalty categorization) |
+| `create_trigger_query` | Trigger: auto-updates summary on detailed insert |
+| `create_procedure_query` | Stored procedure: full refresh of both report tables |
+| `report_detailed_query` | Query to view detailed report |
+| `report_summary_query` | Query to view summary report |
+| `show_report_detailed_query` | Display/verification query |
+| `Datamining/` | Supporting data mining analysis |
+
+---
+
+## Environment
+- PostgreSQL (PL/pgSQL)
+- WGU Labs on Demand — DVD Rental Database
+
 <!-- Badges -->
 <h1 align="center">Scripting Databases – ETL & Data Mining Project</h1>
 
