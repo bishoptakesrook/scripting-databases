@@ -66,7 +66,6 @@ designed to be scheduled (e.g., monthly) to keep data current.
 - WGU Labs on Demand — DVD Rental Database
 
 <!-- Badges -->
-<h1 align="center">Scripting Databases – ETL & Data Mining Project</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
