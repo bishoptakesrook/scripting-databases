@@ -33,3 +33,7 @@ The goal of the project is to create a repeatable reporting pipeline driven by a
 - **Documenting sources and maintaining academic integrity**, including citations, references, and professional communication throughout the submission.
 
 ---
+<!-- Badges -->
+<p align="center">
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/SQL-025E8C?style=for-the-badge&logo=amazon-dynamodb&logoColor=white" />
