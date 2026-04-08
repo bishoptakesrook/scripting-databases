@@ -65,6 +65,51 @@ designed to be scheduled (e.g., monthly) to keep data current.
 - PostgreSQL (PL/pgSQL)
 - WGU Labs on Demand — DVD Rental Database
 
+---
+
+<details>
+<summary>📋 Assignment Rubric (WGU Task Requirements)</summary>
+
+<br>
+
+Data analysts frequently perform periodic extraction of data from a larger 
+database. They then use this extracted data for analysis. A single data extract 
+may serve different organizational needs such as populating an executive summary 
+or providing a complete, detailed collection of data. This task emulates such a 
+process — creating a repeatable data export, import, and analysis for various 
+stakeholders.
+
+**Requirements covered:**
+
+- **A** — Summarize one real-world business report creatable from the DVD Database
+  - A1. Describe the data used for the report
+  - A2. Identify two or more source tables for detailed and summary sections
+  - A3. Identify specific fields for each report section
+  - A4. Identify one field requiring custom transformation and explain why
+  - A5. Explain different business uses of detailed vs. summary sections
+  - A6. Explain recommended refresh frequency for stakeholder relevance
+
+- **B** — Write SQL to create tables for both report sections
+
+- **C** — Write a SQL query to extract raw data for the detailed section and verify accuracy
+
+- **D** — Write function(s) performing the transformation(s) identified in A4
+
+- **E** — Write a SQL trigger on the detailed table to continually update the summary table on insert
+
+- **F** — Create a stored procedure to refresh both tables (truncate + ETL reload), with comments on execution frequency
+  - F1. Explain how the procedure can be scheduled for data freshness
+
+- **G** — Panopto video demonstrating code functionality and summarizing the programming environment
+
+- **H** — Record web sources used for data or third-party code segments
+
+- **I** — Acknowledge sources using in-text citations and references
+
+- **J** — Demonstrate professional communication in content and presentation
+
+</details>
+
 <!-- Badges -->
 
 <p align="center">
