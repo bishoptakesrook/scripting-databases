@@ -34,6 +34,14 @@ The goal of the project is to create a repeatable reporting pipeline driven by a
 
 ---
 <!-- Badges -->
+<h1 align="center">Scripting Databases – ETL & Data Mining Project</h1>
+
 <p align="center">
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
   <img src="https://img.shields.io/badge/SQL-025E8C?style=for-the-badge&logo=amazon-dynamodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/ETL-4CAF50?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSJ3aGl0ZSIgaGVpZ2h0PSIyNCIgd2lkdGg9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0xMiAyYTEwIDEwIDAgMSAwIDEwIDEwQTEwIDEwIDAgMCAwIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjwvc3ZnPg==" />
+  <img src="https://img.shields.io/badge/Data%20Mining-673AB7?style=for-the-badge&logo=databricks&logoColor=white" />
+  <img src="https://img.shields.io/badge/WGU-0A4E9B?style=for-the-badge&logo=graduation-cap&logoColor=white" />
+  <img src="https://img.shields.io/badge/Academic%20Project-555555?style=for-the-badge" />
+</p>
+
